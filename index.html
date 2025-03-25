@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Deportiva</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="js/app.js" ></script>
+</head>
+
+<body onload="verificarconexion();">
+    <label for="toggle" id="label_toggle"><i class="fa-solid fa-moon"></i></label>
+    <input type="checkbox" id="toggle">
+    <div class="contenedor">
+    </div>
+
+    <div id="estado" class="estado"></div><br>
+    <div class="compartir">
+        <button onclick="compartir()">Compartir</button>
+        <button onclick="cambiar()">Cambiar</button>
+    </div>
+    <header class="fila1">
+        <div class="logo">
+            <img src="img/logo.w.jpeg" alt="Logo">
+        </div>
+        <form action="#" class="input-buscar">
+            <input type="text" name="search" placeholder="  Buscar productos ">
+        </form>
+
+        <ul class="redes">
+            <li><a href="https://www.facebook.com/WalonSport" target="_blank"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="https://x.com/i/flow/login?redirect_after_login=%2Fwalon_sport"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/c/WalonSport"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/walonperu/?hl=es"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <ul class="Walon">
+            <li><a href="inicio">Inicio</a></li>
+            <li><a href="tienda">Tienda</a></li>
+            <li><a href="productos-destacados">Productos Destacados</a></li>
+            <li><a href="contacto">Contacto</a></li>
+        </ul>
+    </header>
+
+    <section id="inicio" class="fila2">
+        <h2 class="titulo">Bienvenido a nuestra tienda deportiva</h2>
+        <div class="descripcion">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, expedita, totam recusandae illo ullam maxime eligendi excepturi enim voluptatem ea modi unde. Hic molestias est atque, quas tempora ullam suscipit? Descubre la mejor selección de productos para ti. ¡Calidad y estilo al alcance de tu mano!</p>
+        </div>
+        <img src="img/img.w.jpeg" alt="Imagen de bienvenida" class="foto">
+    </section>
+
+    <section id="tienda" class="fila3">
+        <h2>Explora nuestra tienda</h2>
+        <div class="beneficios">
+            <ul class="lista1">
+                <li><i class="fas fa-gift"></i> Envío gratis en todas tus compras</li>
+                <li><i class="fas fa-star"></i> Productos de alta calidad y durabilidad</li>
+                <li><i class="fas fa-headset"></i> Soporte al cliente 24/7</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="productos-destacados" class="fila4">
+        <h2>Productos Destacados</h2>
+        <select id="filtroCategoria" onchange="filtrarProductos()">
+            <option value="todos">Todos</option>
+            <option value="Polos">Polos</option>
+            <option value="Pelotas">Pelotas</option>
+            <option value="Zapatillas">Zapatillas</option>
+            <option value="Casacas">Casacas</option>
+            <option value="Shorts">Shorts</option>
+            <option value="Medias">Medias</option>
+            <option value="Canilleras">Canilleras</option>
+            <option value="Guantes">Guantes</option>
+            <option value="Buzos">Buzos</option>
+        </select>
+        <div class="productos-destacados">
+            <div class="producto" data-categoria="Polos">
+                <h3>Polos</h3>
+                <img src="img/polos.w.jpeg" alt="Polos" class="foto">
+                <p>Descubre nuestra colección de polos de última moda. ¡Estilo y comodidad garantizados!</p>
+                <button onclick="agregarAlCarrito('Polos')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Pelotas">
+                <h3>Pelotas</h3>
+                <img src="img/pelota.w.jpeg" alt="Pelotas" class="foto">
+                <p>Las mejores pelotas para tus actividades deportivas. ¡Calidad y resistencia incomparables!</p>
+                <button onclick="agregarAlCarrito('Pelotas')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Zapatillas">
+                <h3>Zapatillas</h3>
+                <img src="img/zapatillas.w.jpeg" alt="Zapatillas" class="foto">
+                <p>Encuentra las zapatillas perfectas para cada ocasión. ¡Estilo y confort en cada paso!</p>
+                <button onclick="agregarAlCarrito('Zapatillas')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Casacas">
+                <h3>Casacas</h3>
+                <img src="img/casacaW.jpeg" alt="Casacas" class="foto">
+                <p>Protección y estilo para cualquier clima. ¡Nuestras casacas te mantienen a la moda y cómodo!</p>
+                <button onclick="agregarAlCarrito('Casacas')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Shorts">
+                <h3>Shorts</h3>
+                <img src="img/ShortW.jpeg" alt="Shorts" class="foto">
+                <p>Perfectos para entrenar y relajarte. ¡Encuentra tu comodidad en nuestra línea de shorts!</p>
+                <button onclick="agregarAlCarrito('Shorts')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Medias">
+                <h3>Medias</h3>
+                <img src="img/mediasW.jpeg" alt="Medias" class="foto">
+                <p>Calidad y confort en cada paso. ¡Nuestras medias te ofrecen el soporte que necesitas!</p>
+                <button onclick="agregarAlCarrito('Medias')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Canilleras">
+                <h3>Canilleras</h3>
+                <img src="img/canilleras.W.jpeg" alt="Canilleras" class="foto">
+                <p>Protección y estilo para cualquier clima. ¡Nuestras canilleras te mantienen a la moda y cómodo!</p>
+                <button onclick="agregarAlCarrito('Canilleras')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Guantes">
+                <h3>Guantes</h3>
+                <img src="img/Guantes.W.jpeg" alt="Guantes" class="foto">
+                <p>Perfectos para entrenar y relajarte. ¡Encuentra tu comodidad en nuestra línea de guantes!</p>
+                <button onclick="agregarAlCarrito('Guantes')">Agregar al carrito</button>
+            </div>
+            <div class="producto" data-categoria="Buzos">
+                <h3>Buzos</h3>
+                <img src="img/Buzos.W.jpeg" alt="Buzos" class="foto">
+                <p>Calidad y confort en cada paso. ¡Nuestros buzos te ofrecen el soporte que necesitas!</p>
+                <button onclick="agregarAlCarrito('Buzos')">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="carrito" class="fila5">
+        <h2>Tu Carrito</h2>
+        <div id="carrito-container"></div>
+    </section>
+
+    <section id="contacto-y-calculo" class="fila5">
+        <div class="formulario contacto">
+            <h2>¡Contáctanos!</h2>
+            <form action="#" class="contact-form">
+                <p>¿Tienes alguna pregunta o comentario? ¡Déjanos saber y nos comunicaremos contigo!</p>
+                <input type="text" name="nombre" placeholder="Nombre" class="inputs"><br>
+                <input type="email" name="email" placeholder="Email" class="inputs"><br>
+                <input type="tel" name="whatsapp" placeholder="Número de WhatsApp" class="inputs"><br>
+                <textarea name="mensaje" placeholder="Escribe tu mensaje aquí" class="inputs" rows="4"></textarea><br>
+                <input type="submit" value="Enviar mensaje" class="btn-enviar">
+            </form>
+        </div>
+
+        <div id="calcular-precio" class="container">
+            <h2>Tienda Deportiva Walon</h2><br>
+            <form id="tiendaForm">
+                <label for="producto">Producto:</label>
+                <select id="producto" name="producto">
+                    <option value="Polos">Polos</option>
+                    <option value="Pelotas">Pelotas</option>
+                    <option value="Zapatillas">Zapatillas</option>
+                    <option value="Casacas">Casacas</option>
+                    <option value="Short">Short</option>
+                    <option value="Medias">Medias</option>
+                    <option value="Canilleras">Canilleras</option>
+                    <option value="Guantes">Guantes</option>
+                    <option value="Buzos">Buzos</option>
+                </select><br>
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" name="cantidad" min="1"><br>
+                <button type="button" onclick="calcularTotal()">Calcular Total</button>
+            </form>
+            <div id="total"></div>
+        </div>
+    </section>
+
+    <footer class="fila6">
+        <p>&copy; Tienda de ropa Deportiva - Trujillo 2024</p>
+    </footer>
+</body>
+
+</html>
